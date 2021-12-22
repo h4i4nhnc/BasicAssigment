@@ -1,23 +1,35 @@
 import './App.css'
 import 'bulma/css/bulma.min.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Home } from './pages/Home'
+
+const routes = [
+  {
+    path: '/',
+    exact: true,
+    component: Home,
+  },
+]
 
 function App() {
   return (
-    <div className="main">
-      <div className="buttons">
-        <button className="button is-primary">Primary</button>
-        <button className="button is-link">Link</button>
-        <button className="button is-info">Info</button>
-        <button className="button is-success">Success</button>
-        <button className="button is-warning">Warning</button>
-        <button className="button is-danger">Danger</button>
-        <button className="button is-black">Black</button>
-        <button className="button is-white">White</button>
-        <button className="button is-dark">Dark</button>
-        <button className="button is-light">Light</button>
-      </div>
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          {routes.map(route => (
+            <Route
+              path={route.path}
+              element={route.component()}
+              key={route.path}
+            />
+          ))}
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
 
 export default App
+function NewHoc(component: () => JSX.Element): import('react').ReactNode {
+  throw new Error('Function not implemented.')
+}
