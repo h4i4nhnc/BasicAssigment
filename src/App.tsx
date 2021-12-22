@@ -30,6 +30,3 @@ function App() {
 }
 
 export default App
-function NewHoc(component: () => JSX.Element): import('react').ReactNode {
-  throw new Error('Function not implemented.')
-}
