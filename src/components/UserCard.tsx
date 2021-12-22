@@ -70,7 +70,11 @@ export const UserCard = ({ user }: UserCardProps) => {
     // do remove  user
   }
   return (
-    <div className={cx('column is-one-quarter')} key={user.id}>
+    <div
+      className={cx('user-card column is-one-quarter')}
+      key={user.id}
+      data-testid="data-test-user-card"
+    >
       <div className={css({ margin: 12, border: 'thin solid lightgrey' })}>
         <div className="card-image">
           <figure
