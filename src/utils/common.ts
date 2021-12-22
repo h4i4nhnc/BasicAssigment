@@ -10,3 +10,10 @@ export const chunkArray = (perChunk: number, inputArray: Array<any>) => {
   }, [])
   return result
 }
+
+export const addhttp = (url: string) => {
+  if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0) {
+    return url
+  }
+  return `http://${url}`;
+}

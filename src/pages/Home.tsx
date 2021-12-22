@@ -17,8 +17,9 @@ export const Home = () => {
   })
   return (
     <div>
-      {chunkArray(4, users).map((rows: User[]) => (
+      {chunkArray(4, users).map((rows: User[], index: number) => (
         <div
+          key={index}
           className={cx(
             'columns is-desktop is-gapless',
             css({ marginBottom: '0px !important' }),
