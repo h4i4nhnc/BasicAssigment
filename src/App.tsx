@@ -1,10 +1,9 @@
 import './App.css'
+import 'bulma/css/bulma.min.css'
 import { Provider } from 'react-redux'
 import { AppRouter } from './containers/appRouter'
 import history from 'utils/history'
-// import ReactDOM from 'react-dom'
-
-import configureStore from './configureStore'
+import configureStore from 'configureStore'
 
 // Create redux store with history
 const initialState = {}

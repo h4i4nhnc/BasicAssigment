@@ -1,3 +1,4 @@
+import { styles } from './styles'
 export const Footer = () => {
-  return <div>this is Footer</div>
+  return <div className={styles.footer}>This is Footer</div>
 }

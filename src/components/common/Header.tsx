@@ -1,3 +1,5 @@
+import { styles } from './styles'
+
 export const Header = () => {
-  return <div>this is header</div>
+  return <div className={styles.header}>This is header</div>
 }
