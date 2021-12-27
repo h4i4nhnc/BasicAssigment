@@ -1,8 +1,8 @@
 import { css, cx } from '@emotion/css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { User, UserCard } from '../components/UserCard'
-import { chunkArray } from '../utils/common'
+import { User, UserCard } from 'components/home/UserCard'
+import { chunkArray } from 'utils/common'
 
 export const Home = () => {
   const [users, setUsers] = useState<User[]>([])

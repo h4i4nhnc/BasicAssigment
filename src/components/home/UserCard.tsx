@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { cx, css } from '@emotion/css'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import { addhttp } from '../utils/common'
+import { addhttp } from '../../utils/common'
 
 export type User = {
   id: number
@@ -32,7 +32,7 @@ const renderIconText = (
   isLink: boolean = false,
 ) => {
   return (
-    <div className="icon-text">
+    <div className="icon-text" role="heading" aria-level={2}>
       <div>
         <FontAwesomeIcon icon={icon} className={css({ marginRight: 8 })} />
       </div>
@@ -84,7 +84,12 @@ export const UserCard = ({ user }: UserCardProps) => {
           </figure>
         </div>
         <div className={cx('card-content has-text-left', css({ padding: 12 }))}>
-          <div className="has-text-weight-bold">{user.name}</div>
+          <div
+            className="has-text-weight-bold"
+            data-testid="data-test-user-name"
+          >
+            {user.name}
+          </div>
           <div />
           <div>{renderIconText(faEnvelope, user.email)}</div>
           <div>{renderIconText(faPhone, user.phone)}</div>
