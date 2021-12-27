@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { cx, css } from '@emotion/css'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import { addhttp } from '../utils/common'
+import { addhttp } from '../../utils/common'
 
 export type User = {
   id: number

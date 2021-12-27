@@ -1,31 +1,20 @@
 import './App.css'
-import 'bulma/css/bulma.min.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Home } from './pages/Home'
+import { Provider } from 'react-redux'
+import { AppRouter } from './containers/appRouter'
+import history from 'utils/history'
+// import ReactDOM from 'react-dom'
 
-const routes = [
-  {
-    path: '/',
-    exact: true,
-    component: Home,
-  },
-]
+import configureStore from './configureStore'
+
+// Create redux store with history
+const initialState = {}
+const store = configureStore(initialState, history)
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          {routes.map(route => (
-            <Route
-              path={route.path}
-              element={route.component()}
-              key={route.path}
-            />
-          ))}
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
   )
 }
 
