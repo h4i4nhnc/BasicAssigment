@@ -1,4 +1,4 @@
-import { css, cx } from '@emotion/css'
+import { cx } from '@emotion/css'
 import { useCallback, useEffect, useState } from 'react'
 import { User, UserCard } from 'components/card/UserCard'
 import { chunkArray } from 'utils/common'

@@ -26,6 +26,14 @@ type UserCardProps = {
   user: User
 }
 
+const styles = {
+  icon: css({ marginRight: 8 }),
+  iconButton: css({ marginRight: 12 }),
+  cardWrapper: css({ margin: 12, border: 'thin solid lightgrey' }),
+  cardImage: css({ backgroundColor: '#ededed' }),
+  details: css({ padding: 12 }),
+}
+
 const renderIconText = (
   icon: IconProp,
   text: string,
@@ -34,7 +42,7 @@ const renderIconText = (
   return (
     <div className="icon-text" role="heading" aria-level={2}>
       <div>
-        <FontAwesomeIcon icon={icon} className={css({ marginRight: 8 })} />
+        <FontAwesomeIcon icon={icon} className={styles.icon} />
       </div>
       <div>
         <span className="ellipsis is-ellipsis-1">
@@ -53,7 +61,7 @@ const renderIconText = (
 
 const renderFooterButton = (icon: IconProp, callBack: () => void) => (
   <button className="button is-light card-footer-item" onClick={callBack}>
-    <FontAwesomeIcon icon={icon} className={css({ marginRight: 12 })} />
+    <FontAwesomeIcon icon={icon} className={styles.iconButton} />
   </button>
 )
 
@@ -75,15 +83,13 @@ export const UserCard = ({ user }: UserCardProps) => {
       key={user.id}
       data-testid="data-test-user-card"
     >
-      <div className={css({ margin: 12, border: 'thin solid lightgrey' })}>
+      <div className={styles.cardWrapper}>
         <div className="card-image">
-          <figure
-            className={cx('image is-2by1', css({ backgroundColor: '#ededed' }))}
-          >
+          <figure className={cx('image is-2by1', styles.cardImage)}>
             <img src={userImageUrl} alt="user-avatar" />
           </figure>
         </div>
-        <div className={cx('card-content has-text-left', css({ padding: 12 }))}>
+        <div className={cx('card-content has-text-left', styles.details)}>
           <div
             className="has-text-weight-bold"
             data-testid="data-test-user-name"
