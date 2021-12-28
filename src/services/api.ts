@@ -15,11 +15,11 @@ export const doGet = async (url: string) => {
     if (response.status === 200) {
       return response.data
     } else {
-      // handle server errors
+      // TODO: handle server errors
     }
   })
   .catch((error: any) => {
-    // handle error
+    // TODO: handle unexpected error
     console.log("DO FETCH ERROR", error)
   })
 }

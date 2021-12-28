@@ -1,8 +1,9 @@
 import { css, cx } from '@emotion/css'
 import { useCallback, useEffect, useState } from 'react'
-import { User, UserCard } from 'components/home/UserCard'
+import { User, UserCard } from 'components/card/UserCard'
 import { chunkArray } from 'utils/common'
 import { fetchUsers } from 'services/home'
+import { styles } from './styles'
 
 export const Home = () => {
   const [users, setUsers] = useState<any>([])
@@ -20,16 +21,13 @@ export const Home = () => {
   }, [fetchUserList])
 
   return loading ? (
-    <>Loading...</>
+    <div className={styles.loading}>Loading...</div>
   ) : (
     <div>
       {chunkArray(4, users).map((rows: User[], index: number) => (
         <div
           key={index}
-          className={cx(
-            'columns is-desktop is-gapless',
-            css({ marginBottom: '0px !important' }),
-          )}
+          className={cx('columns is-desktop is-gapless', styles.cardRow)}
         >
           {rows.map(user => (
             <UserCard key={user.id} user={user} />
